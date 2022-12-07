@@ -38,13 +38,21 @@ searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const jobResults = searchJobs(jobType.value);
-    
+
+    // resultSection.innerHTML = '<div id="result-section"></div>';
+
+    // jobs.forEach(function (job) {
+    //   const div = document.createElement("div");
+    //   div.innerHTML = ` <h4>${job.title}</h4> <p>${job.description}</p> `;
+    //   resultSection.appendChild(div);
+    // });
+
     // job.title
     // job.description
     // job.location.display_name
     // job.contract_time
     // job.salary_max
-    // job.salary_min
+    //  job.salary_min
     jobResults.forEach(function (job) {
         const div = document.createElement("div");
         div.innerHTML = ` 
@@ -56,13 +64,21 @@ searchForm.addEventListener("submit", function (e) {
 
         resultSection.appendChild(div);
     });
+})
 
-
-});
+// I have jobs that are above 40k
 
 // or
 
 // searchForm.addEventListener('submit', () => {})
+
+// inside an eventHandler
+
+// let allJobs = searchJobs('Jobs I need)
+
+// let justAbove40k = allJobs.filter(function(jobs){
+//   return job.salary.min >= 40000
+// })
 
 async function searchJobs(jobString, jobsCount = 10, country = "us") {
     const url = `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=66a746a9&app_key=68aca40691422c92c975384f483f8bbd&results_per_page${jobsCount}&what=${jobString}&content-type=application/json`;
