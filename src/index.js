@@ -38,21 +38,13 @@ searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const jobResults = searchJobs(jobType.value);
-
-    // resultSection.innerHTML = '<div id="result-section"></div>';
-
-    // jobs.forEach(function (job) {
-    //   const div = document.createElement("div");
-    //   div.innerHTML = ` <h4>${job.title}</h4> <p>${job.description}</p> `;
-    //   resultSection.appendChild(div);
-    // });
-
+    
     // job.title
     // job.description
     // job.location.display_name
     // job.contract_time
     // job.salary_max
-    //  job.salary_min
+    // job.salary_min
     jobResults.forEach(function (job) {
         const div = document.createElement("div");
         div.innerHTML = ` 
