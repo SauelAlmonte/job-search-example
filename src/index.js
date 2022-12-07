@@ -64,7 +64,7 @@ searchForm.addEventListener("submit", function (e) {
 
         resultSection.appendChild(div);
     });
-})
+});
 
 // I have jobs that are above 40k
 
