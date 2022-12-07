@@ -64,6 +64,8 @@ searchForm.addEventListener("submit", function (e) {
 
         resultSection.appendChild(div);
     });
+
+
 });
 
 // or
