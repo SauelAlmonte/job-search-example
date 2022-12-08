@@ -9,21 +9,31 @@
     <title>Job Search Example</title>
 </head>
 <body>
-<div id="app" class="bg-red-400">
-    <h2 class="title">My Jobs</h2>
+<div id="app" class="bg-red-400 h-screen">
+    <h2 class="text-2xl text-white font-bold pb-2 pl-6">
+        My Jobs
+    </h2>
 
     <form id="search-form">
-        <div class="input">
-            <input class="search"
-                     type="text"
-                     id="job-type"
-                     placeholder="What are you looking for?"
-        />
-            <input class="btn" id="submit" type="submit" value="search"/>
+        <div class="flex p-2 pb-4 w-2/5 justify-evenly">
+            <div class=" w-3/4">
+                <input class="w-full rounded-xl p-2"
+                         type="text"
+                         id="job-type"
+                         placeholder="What are you looking for?"
+                />
+            </div>
+            <div>
+                <input class="p-2 px-4 rounded-xl bg-white"
+                         id="submit" type="submit" value="search"
+                />
+            </div>
         </div>
     </form>
 
-    <h2 class="title">Jobs Found</h2>
+    <h2 class="text-white font-bold text-2xl pl-6 pb-6">
+        Jobs Found
+    </h2>
     <hr />
 
     <div id="result-section">
