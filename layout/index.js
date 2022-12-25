@@ -8,28 +8,30 @@ const SEARCH_COUNTRY = 'us'
 // Page
 searchForm.addEventListener('submit', async function (e){
     e.preventDefault()
-
-    const jobsName = jobType.value
-    let jobResults = await searchJobs(jobsName)
-    let jobs = jobResults.result
-    let jobsFound = jobResults.count
-
-    updatePage(jobs, jobsFound)
+    getJob()
 })
 
+async function getJob(){
+    const jobName = jobType.value
+    let jobResults = await searchJobs(jobName)
+    let jobs = jobResults.results
+    let jobsFound = jobResults.count
+
+    updatePage(jobs, jobsFound, jobName)
+}
+
 // Page
-function updatePage(jobs, jobsFound, jobsName){
+function updatePage(jobs, jobsFound, jobName){
 // update page with results
-    resultSection.innerHTML = `
-        <div id="result-section" class="p-16">
-            <h1>${jobsFound} jobs found for <strong>${jobsName}</strong>in ${SEARCH_COUNTRY.toUpperCase()}
-            </h1>
-        </div> `
-
-    jobs.forEach(function(jobs){
+    resultSection.innerHTML = 
+        `<div id="result-section" class="p-4">
+         <h1>${jobsFound} jobs found for <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1>
+         </div>`   
+    
+    jobs.forEach(function (job){
         const div = document.createElement('div')
-        div.innerHTML = `<h4><a href="${jobs.redirect_url}">${jobs.title}</a> | ${jobs.location.display_name}</h4> <p>${jobs.description}</p>`
-
+        div.innerHTML = 
+            `<h4 class="pl-4 pb-2"><a href="${job.redirect_url}"><strong class="text-blue-700">${job.title}</strong></a> | ${job.location.display_name}</h4> <p class="pl-4 pb-4">${job.description}</p>`
         resultSection.appendChild(div)
     })
 }
