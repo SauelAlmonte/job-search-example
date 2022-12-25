@@ -25,13 +25,13 @@ function updatePage(jobs, jobsFound, jobName){
 // update page with results
     resultSection.innerHTML = 
         `<div id="result-section" class="p-4">
-         <h1>${jobsFound} jobs found for <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1>
+         <h1><strong>${jobsFound}</strong> jobs found for <strong>${jobName.toUpperCase()}</strong> in <strong>${SEARCH_COUNTRY.toUpperCase()}</strong></h1>
          </div>`   
     
     jobs.forEach(function (job){
         const div = document.createElement('div')
         div.innerHTML = 
-            `<h4 class="pl-4 pb-2"><a href="${job.redirect_url}"><strong class="text-blue-700">${job.title}</strong></a> | ${job.location.display_name}</h4> <p class="pl-4 pb-4">${job.description}</p>`
+            `<h4 class="pl-4 pb-2"><a href="${job.redirect_url}"><strong class="text-blue-700">${job.title}</strong></a> | <strong>${job.location.display_name}</strong></h4> <p class="pl-4 pb-4 px-24 ">${job.description}</p>`
         resultSection.appendChild(div)
     })
 }
