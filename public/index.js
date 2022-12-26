@@ -36,7 +36,7 @@ function updatePage(jobs, jobsFound, jobName){
     })
 }
 
-async function searchJobs (jobString, jobsCount = 10, country = SEARCH_COUNTRY){
+async function searchJobs (jobString, jobsCount = 25, country = SEARCH_COUNTRY){
     const url = `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=66a746a9&app_key=68aca40691422c92c975384f483f8bbd&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
 
     const result = await fetch(url)
