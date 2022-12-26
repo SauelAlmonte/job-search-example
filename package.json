@@ -3,9 +3,9 @@
     "live-server": "^1.2.2"
   },
   "scripts": {
-  "dev": "live-server .",
-  "tw": "tailwindcss -i ./src/tailwind.css -o ./dist/styles.css",
-  "dev2": "tailwindcss -i ./src/tailwind.css -o ./dist/styles.css --watch --verbose"
+    "dev": "live-server .",
+    "tw": "tailwind build -i src/tailwind.css -o public/styles.css",
+    "dev2": "tailwindcss build -i src/tailwind.css -o public/styles.css --watch --verbose"
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
